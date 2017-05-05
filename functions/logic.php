@@ -41,7 +41,7 @@ if (!empty($_POST['add_table'])) {
   $tableName = $_POST['tableName'];
   $columnCount = $_POST['tableColumn'];
   $tables->createTable($tableName, $columnCount, $_POST);
-  header('Location: index.php');
+  //header('Location: index.php');
 }
 
 //Удаление таблицы

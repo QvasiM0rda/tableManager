@@ -22,7 +22,8 @@ class tables extends myPDO
       $name = $columnArray["name_$i"];
       $type = $columnArray["type_$i"] . '(' . $columnArray["length_$i"] . ')';
       $null = !empty($columnArray["null_$i"]) ? 'NULL' : '';
-      $default = $columnArray["default_$i"];
+      $default = ($columnArray["default_$i"] !== '') ? 'DEFAULT \'' . $columnArray["default_$i"] . '\' ' : '';
+      $default;
       $auto_increment = !empty($columnArray["auto_increment_$i"]) ? 'AUTO_INCREMENT' : '';
       if (!empty($columnArray["primary_key_$i"])) {$primaryKey = $name;}
       $query = $query . <<<QUERY
